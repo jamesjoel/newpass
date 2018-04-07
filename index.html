@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script type="text/javascript" src="javascripts/angular.min.js"></script>
+	<script type="text/javascript">
+	var app=angular.module("myApp", []);
+	app.controller("myCtrl", function($scope, $http){
+		
+		$scope.demo=function(){
+			$http({
+				method : "GET",
+				url : "/get"
+				
+			}).then(function(res){
+				console.log(res);
+			});
+		}
+	});
+	</script>
+</head>
+<body ng-controller="myCtrl">
+	
+	<br />
+	<input type="button" ng-click="demo()" name="username" value="ok" />
+
+</form>
+</body>
+</html>
